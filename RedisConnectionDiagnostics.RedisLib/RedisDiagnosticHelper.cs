@@ -7,7 +7,7 @@ namespace RedisConnectionDiagnostics.RedisLib
 {
     public static class RedisDiagnosticHelper
     {
-        private static readonly string ConnectionString = Environment.GetEnvironmentVariable("REDISDIAGNOSTICS_CONN");
+        private static readonly string ConnectionString = Environment.GetEnvironmentVariable("REDISDIAGNOSTICS_CONN") ?? "localhost";
         private const string Key = "RedisDiagnosticHelper:Test";
 
         public static async Task<string> Run()
